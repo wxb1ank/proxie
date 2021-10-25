@@ -51,7 +51,7 @@ fn try_setup_tracing() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 }
 
 async fn serve() -> Result<(), hyper::Error> {
-    let addr = ([127, 0, 0, 1], 80).into();
+    let addr = ([0, 0, 0, 0], 80).into();
     tracing::info!("Binding to {}", addr);
 
     Server::bind(&addr)
